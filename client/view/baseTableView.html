@@ -1,0 +1,31 @@
+<div class="row">
+    <form>
+    <div class = "form-group">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th ng-repeat="tabHeader in objData.arrHeaders">
+                    {{tabHeader}}
+                </th>
+            </tr>>
+        </thead>
+        <tr ng-repeat="row in objData.result">
+            <td>
+               {{row.rowName}} 
+            </td>
+            <td>
+                {{row.rowUnits}}
+            </td>
+            <td>
+                {{row.rowReference}}
+            </td>
+            <td ng-repeat="dataValue in row.rowValues">
+                <input type="textarea" ng-model="dataValue"/>
+                    <!--{{dataValue}} -->
+            </td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-default" ng-click="save()"> Save </button>
+    </div>
+    </form>
+</div>
